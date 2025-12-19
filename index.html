@@ -3,63 +3,81 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Austin Home Cleaning Co.</title>
+<title>Austin Elite Web Solutions</title>
 <style>
   /* RESET */
-  * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Arial', sans-serif; }
-  body { line-height: 1.6; }
+  * { margin:0; padding:0; box-sizing:border-box; font-family: 'Segoe UI', sans-serif; }
+  body { background:#f9f9f9; color:#222; line-height:1.6; }
 
   /* COLORS */
   :root {
-    --primary: #ff6b6b;
-    --secondary: #feca57;
-    --accent: #1dd1a1;
-    --bg: #f0f0f0;
+    --primary: #4a90e2;
+    --secondary: #50e3c2;
+    --accent: #f5a623;
+    --bg: #f9f9f9;
     --text-dark: #222;
   }
 
-  /* LAYOUT */
-  body { background: var(--bg); color: var(--text-dark); }
-  header { background: var(--primary); color: white; padding: 20px 10%; text-align: center; }
-  header h1 { font-size: 2rem; margin-bottom: 10px; }
-  nav a { color: white; margin: 0 15px; text-decoration: none; font-weight: bold; }
-  section { padding: 60px 10%; }
-  section h2 { color: var(--primary); margin-bottom: 20px; font-size: 1.8rem; }
-  section p { margin-bottom: 20px; }
-  .btn { background: var(--accent); color: white; padding: 12px 25px; border-radius: 5px; text-decoration: none; font-weight: bold; transition: 0.3s; }
-  .btn:hover { background: var(--secondary); color: var(--text-dark); }
+  /* GLOBAL */
+  a { text-decoration:none; color:inherit; }
+  .btn { display:inline-block; padding:12px 25px; border-radius:6px; font-weight:bold; transition:0.3s; }
+  .btn-primary { background:var(--primary); color:white; }
+  .btn-primary:hover { background:var(--accent); color:white; }
+  .btn-whatsapp { background:#25D366; color:white; }
+  .btn-whatsapp:hover { background:#128C7E; }
+
+  header { background: var(--primary); color:white; padding:20px 10%; text-align:center; }
+  header h1 { font-size:2.5rem; margin-bottom:10px; }
+  nav { margin-top:10px; }
+  nav a { margin:0 15px; font-weight:bold; }
 
   /* HERO */
-  .hero { background: linear-gradient(135deg, #ff9a9e, #fad0c4); padding: 100px 10%; text-align: center; color: white; }
-  .hero h2 { font-size: 2.5rem; margin-bottom: 20px; }
-  .hero p { font-size: 1.2rem; margin-bottom: 30px; }
+  .hero { display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center;
+          background:linear-gradient(135deg, #4a90e2, #50e3c2); padding:120px 10%; color:white; }
+  .hero h2 { font-size:3rem; margin-bottom:20px; }
+  .hero p { font-size:1.2rem; margin-bottom:30px; max-width:700px; }
 
-  /* SERVICES GRID */
-  .services { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
-  .service-card { background: white; padding: 20px; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); transition: 0.3s; }
-  .service-card:hover { transform: translateY(-5px); box-shadow: 0 8px 20px rgba(0,0,0,0.2); }
-  .service-card h3 { margin-bottom: 10px; color: var(--accent); }
+  /* SECTIONS */
+  section { padding:80px 10%; }
+  section h2 { color:var(--primary); font-size:2rem; margin-bottom:30px; text-align:center; }
+  section p { max-width:800px; margin:0 auto 20px; text-align:center; }
 
-  /* CONTACT FORM */
-  form { display: flex; flex-direction: column; gap: 15px; max-width: 500px; margin: auto; }
-  input, textarea { padding: 12px; border-radius: 5px; border: 1px solid #ccc; }
-  textarea { resize: vertical; }
-  .whatsapp { background: #25D366; display: inline-block; margin-top: 15px; }
+  /* SERVICES */
+  .services { display:grid; grid-template-columns:repeat(auto-fit, minmax(250px,1fr)); gap:25px; margin-top:40px; }
+  .service-card { background:white; border-radius:12px; overflow:hidden; box-shadow:0 10px 25px rgba(0,0,0,0.1); transition:0.3s; }
+  .service-card:hover { transform:translateY(-8px); box-shadow:0 15px 35px rgba(0,0,0,0.2); }
+  .service-card img { width:100%; height:200px; object-fit:cover; }
+  .service-card h3 { color:var(--accent); font-size:1.4rem; margin:15px; }
+  .service-card p { margin:0 15px 15px; }
 
+  /* ABOUT */
+  .about-container { display:flex; flex-wrap:wrap; align-items:center; justify-content:center; gap:40px; }
+  .about-img { flex:1; min-width:300px; max-width:500px; }
+  .about-img img { width:100%; border-radius:12px; }
+  .about-text { flex:1; min-width:300px; max-width:500px; }
+  .about-text p { text-align:left; font-size:1.1rem; }
+
+  /* CONTACT */
+  form { display:flex; flex-direction:column; gap:15px; max-width:500px; margin:0 auto; }
+  input, textarea { padding:12px; border-radius:6px; border:1px solid #ccc; font-size:1rem; width:100%; }
+  textarea { resize:vertical; }
+  .contact-buttons { text-align:center; margin-top:20px; }
+  
   /* FOOTER */
-  footer { background: var(--primary); color: white; text-align: center; padding: 20px 10%; margin-top: 40px; }
+  footer { background: var(--primary); color:white; text-align:center; padding:25px 10%; margin-top:40px; }
 
   /* RESPONSIVE */
-  @media(max-width: 768px) {
-    nav { display: flex; flex-direction: column; gap: 10px; }
-    .hero h2 { font-size: 2rem; }
+  @media(max-width:768px) {
+    nav { display:flex; flex-direction:column; gap:10px; }
+    .hero h2 { font-size:2.2rem; }
+    .about-container { flex-direction:column; }
   }
 </style>
 </head>
 <body>
 
 <header>
-  <h1>Austin Home Cleaning Co.</h1>
+  <h1>Austin Elite Web Solutions</h1>
   <nav>
     <a href="#services">Services</a>
     <a href="#about">About</a>
@@ -68,32 +86,48 @@
 </header>
 
 <section class="hero">
-  <h2>We Make Your Home Shine!</h2>
-  <p>Professional cleaning services in Austin. Quick, reliable, and hassle-free.</p>
-  <a href="#contact" class="btn">Book Now</a>
+  <h2>Websites That Sell, Engage & Convert</h2>
+  <p>Premium websites for US clients. Fully responsive, visually stunning, and built for maximum conversion.</p>
+  <a href="#contact" class="btn btn-primary">Book Your Project</a>
 </section>
 
 <section id="services">
   <h2>Our Services</h2>
   <div class="services">
     <div class="service-card">
-      <h3>Residential Cleaning</h3>
-      <p>Deep cleaning for homes, apartments, and condos. Sparkling results guaranteed.</p>
+      <img src="https://source.unsplash.com/400x200/?website,design" alt="Web Design">
+      <h3>Custom Web Design</h3>
+      <p>Beautiful, responsive, and conversion-focused websites tailored to your brand.</p>
     </div>
     <div class="service-card">
-      <h3>Commercial Cleaning</h3>
-      <p>Keep your office or business spotless. Reliable, professional team at your service.</p>
+      <img src="https://source.unsplash.com/400x200/?seo,analytics" alt="SEO & Marketing">
+      <h3>SEO & Marketing</h3>
+      <p>Get found online and attract US customers with expert SEO and digital marketing.</p>
     </div>
     <div class="service-card">
-      <h3>Move-In / Move-Out</h3>
-      <p>Ensure your property is ready for new tenants with our thorough cleaning services.</p>
+      <img src="https://source.unsplash.com/400x200/?ecommerce,store" alt="E-commerce">
+      <h3>E-commerce Solutions</h3>
+      <p>High-converting online stores with seamless user experience and fast checkout.</p>
+    </div>
+    <div class="service-card">
+      <img src="https://source.unsplash.com/400x200/?support,consulting" alt="Consulting">
+      <h3>Consulting & Support</h3>
+      <p>10+ years experience delivering professional solutions and ongoing support.</p>
     </div>
   </div>
 </section>
 
 <section id="about">
   <h2>About Us</h2>
-  <p>We are a family-owned cleaning company serving Austin for over 10 years. Our goal is simple: make your home or business shine while saving you time and stress.</p>
+  <div class="about-container">
+    <div class="about-img">
+      <img src="https://source.unsplash.com/500x400/?office,team" alt="About Us">
+    </div>
+    <div class="about-text">
+      <p>We are a team of expert web developers and designers with over 10 years of experience creating websites that sell. Our mission is to help US businesses grow by building visually stunning, fast, and fully responsive websites that generate leads and increase revenue.</p>
+      <p>Every project is treated like a million-dollar website, delivering the highest quality, performance, and user experience.</p>
+    </div>
+  </div>
 </section>
 
 <section id="contact">
@@ -103,13 +137,15 @@
     <input type="email" placeholder="Email Address" required>
     <input type="text" placeholder="Phone / WhatsApp" required>
     <textarea placeholder="Your Message" rows="5" required></textarea>
-    <button type="submit" class="btn">Send Message</button>
+    <div class="contact-buttons">
+      <button type="submit" class="btn btn-primary">Send Message</button>
+      <a href="https://wa.me/1234567890" class="btn btn-whatsapp">Message on WhatsApp</a>
+    </div>
   </form>
-  <a href="https://wa.me/1234567890" class="btn whatsapp">Message on WhatsApp</a>
 </section>
 
 <footer>
-  &copy; 2025 Austin Home Cleaning Co. All rights reserved.
+  &copy; 2025 Austin Elite Web Solutions. All Rights Reserved.
 </footer>
 
 </body>
