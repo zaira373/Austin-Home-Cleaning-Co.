@@ -6,9 +6,7 @@
 <title>Austin Home Cleaning Co.</title>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
-
 * { margin:0; padding:0; box-sizing:border-box; font-family: 'Roboto', sans-serif; }
-
 body { background: #f9f9f9; color: #333; scroll-behavior: smooth; }
 
 nav {
@@ -16,25 +14,19 @@ nav {
   display: flex; justify-content: space-between; padding: 15px 50px; box-shadow: 0 2px 10px rgba(0,0,0,0.1);
   z-index: 1000; transition: 0.3s;
 }
-
 nav a { text-decoration: none; color: #333; margin: 0 15px; font-weight: 500; transition: 0.3s; }
 nav a:hover { color: #27ae60; }
 
 header {
   height: 100vh; position: relative;
-  background: url('https://images.unsplash.com/photo-1605902711622-cfb43c4431d3?auto=format&fit=crop&w=1350&q=80') center/cover no-repeat;
+  background: url('https://images.unsplash.com/photo-1581579188888-8f0c797d10d2?auto=format&fit=crop&w=1350&q=80') center/cover no-repeat;
   display: flex; justify-content: center; align-items: center; text-align: center;
 }
-
 header::after {
   content:""; position:absolute; top:0; left:0; width:100%; height:100%;
   background: rgba(0,0,0,0.5);
 }
-
-header .hero-content {
-  position: relative; color:white; max-width: 700px; animation: fadeIn 2s ease-in-out;
-}
-
+header .hero-content { position: relative; color:white; max-width: 700px; animation: fadeIn 2s ease-in-out; }
 header h1 { font-size: 3rem; margin-bottom: 20px; animation: slideDown 1.5s ease-out; }
 header p { font-size: 1.2rem; margin-bottom: 30px; animation: slideUp 1.5s ease-out; }
 header .cta { padding:15px 30px; background:#27ae60; color:white; border:none; border-radius:10px; cursor:pointer; font-size:1rem; transition:0.3s; }
@@ -46,19 +38,16 @@ h2 { font-size:2.5rem; margin-bottom:40px; color:#27ae60; }
 .services {
   display:flex; flex-wrap:wrap; justify-content: center; gap:30px;
 }
-
 .service {
   background:white; padding:30px; border-radius:15px; box-shadow:0 8px 20px rgba(0,0,0,0.1);
   transition: transform 0.3s, box-shadow 0.3s; width:300px;
   opacity:0; transform:translateY(50px); animation: fadeInUp 1s forwards;
 }
-
 .service:nth-child(1) { animation-delay:0.2s; }
 .service:nth-child(2) { animation-delay:0.4s; }
 .service:nth-child(3) { animation-delay:0.6s; }
-
 .service:hover { transform: translateY(-10px); box-shadow: 0 12px 30px rgba(0,0,0,0.2); }
-.service img { width:80px; margin-bottom:20px; }
+.service img { width:100%; height:180px; object-fit:cover; border-radius:10px; margin-bottom:20px; }
 
 .gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px,1fr)); gap:20px; }
 .gallery img { width:100%; border-radius:15px; transition: transform 0.3s; }
@@ -108,17 +97,17 @@ footer { background:#333; color:white; padding:40px 50px; text-align:center; }
   <h2>Our Services</h2>
   <div class="services">
     <div class="service">
-      <img src="https://img.icons8.com/color/96/cleaning.png" alt="Home Cleaning">
+      <img src="https://images.unsplash.com/photo-1605902711622-cfb43c4431d3?auto=format&fit=crop&w=400&q=80" alt="Home Cleaning">
       <h3>Home Cleaning</h3>
       <p>Deep cleaning for your entire home using eco-friendly products.</p>
     </div>
     <div class="service">
-      <img src="https://img.icons8.com/color/96/mop.png" alt="Office Cleaning">
+      <img src="https://images.unsplash.com/photo-1581579189034-0b8d7c5d18e4?auto=format&fit=crop&w=400&q=80" alt="Office Cleaning">
       <h3>Office Cleaning</h3>
       <p>Keep your workspace sparkling clean and hygienic for employees.</p>
     </div>
     <div class="service">
-      <img src="https://img.icons8.com/color/96/spray-bottle.png" alt="Special Cleaning">
+      <img src="https://images.unsplash.com/photo-1581579189002-9f5b3f2d4b8f?auto=format&fit=crop&w=400&q=80" alt="Special Cleaning">
       <h3>Specialized Cleaning</h3>
       <p>Carpet, upholstery, and deep sanitization services available.</p>
     </div>
@@ -128,7 +117,7 @@ footer { background:#333; color:white; padding:40px 50px; text-align:center; }
 <section id="about">
   <h2>About Us</h2>
   <div class="about-content">
-    <img src="https://images.unsplash.com/photo-1581579188888-8f0c797d10d2?auto=format&fit=crop&w=800&q=80" alt="Team">
+    <img src="https://images.unsplash.com/photo-1590642919850-8f89aee4e60d?auto=format&fit=crop&w=400&q=80" alt="Team">
     <div>
       <p>At Austin Home Cleaning Co., we provide professional cleaning solutions for homes and offices with a focus on quality, reliability, and eco-friendly practices. Our trained staff ensures your space is spotless and healthy. We take pride in our attention to detail and commitment to customer satisfaction.</p>
     </div>
@@ -138,10 +127,11 @@ footer { background:#333; color:white; padding:40px 50px; text-align:center; }
 <section id="gallery">
   <h2>Gallery</h2>
   <div class="gallery">
-    <img src="https://images.unsplash.com/photo-1581579189034-0b8d7c5d18e4?auto=format&fit=crop&w=800&q=80" alt="Cleaning 1">
-    <img src="https://images.unsplash.com/photo-1581579189002-9f5b3f2d4b8f?auto=format&fit=crop&w=800&q=80" alt="Cleaning 2">
-    <img src="https://images.unsplash.com/photo-1605902711622-cfb43c4431d3?auto=format&fit=crop&w=800&q=80" alt="Cleaning 3">
-    <img src="https://images.unsplash.com/photo-1616627782195-28e5b86e1ff0?auto=format&fit=crop&w=800&q=80" alt="Cleaning 4">
+    <img src="https://images.unsplash.com/photo-1616627782195-28e5b86e1ff0?auto=format&fit=crop&w=400&q=80" alt="Cleaning 1">
+    <img src="https://images.unsplash.com/photo-1590642920130-4e2fa88b1f7c?auto=format&fit=crop&w=400&q=80" alt="Cleaning 2">
+    <img src="https://images.unsplash.com/photo-1605902711622-cfb43c4431d3?auto=format&fit=crop&w=400&q=80" alt="Cleaning 3">
+    <img src="https://images.unsplash.com/photo-1590642930178-f1b1d2b83b70?auto=format&fit=crop&w=400&q=80" alt="Cleaning 4">
+    <img src="https://images.unsplash.com/photo-1605902726551-3d1f563e7317?auto=format&fit=crop&w=400&q=80" alt="Cleaning 5">
   </div>
 </section>
 
